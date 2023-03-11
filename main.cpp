@@ -72,9 +72,9 @@ void variableDeclarations()
     bool isDead = true;
     bool isAlive = false;
     bool hasWonTheWorldCup = true;
-    float weight = 4.0;
-    float  height = 5.0;
-    float price = 6.0;
+    float weight = 4.0f;
+    float  height = 5.0f;
+    float price = 6.0f;
     double noIdea = 7.0;
     double whatever = 8.0;
     double somethingElse = 9.0;
@@ -100,7 +100,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-int timeBeforeDeath (int age, bool isDead)
+int calculateTimeBeforeDeath (int age, bool isDead)
 { 
     ignoreUnused(age, isDead); 
     return {}; 
@@ -108,7 +108,7 @@ int timeBeforeDeath (int age, bool isDead)
 /*
  2)
  */
-int timeSinceBirth (int age, bool isAlive)
+int calculateTimeSinceBirth (int age, bool isAlive)
 { 
     ignoreUnused(age, isAlive); 
     return {}; 
@@ -116,7 +116,7 @@ int timeSinceBirth (int age, bool isAlive)
 /*
  3)
  */
-void howWon(bool hasWonTheWorldCup, float price)
+void payToWon(bool hasWonTheWorldCup, float price)
 { 
     ignoreUnused(hasWonTheWorldCup, price); 
    
@@ -124,7 +124,7 @@ void howWon(bool hasWonTheWorldCup, float price)
 /*
  4)
  */
-float volume (float weight, float height)
+float calculateVolume (float weight, float height)
 { 
     ignoreUnused(weight, height); 
     return {}; 
@@ -132,7 +132,7 @@ float volume (float weight, float height)
 /*
  5)
  */
-void toHardtoFindVirtualIdeas(double noIdea, double whatever)
+void executeTheTask(double noIdea, double whatever)
 { 
     ignoreUnused(noIdea, whatever); 
     
@@ -140,7 +140,7 @@ void toHardtoFindVirtualIdeas(double noIdea, double whatever)
 /*
  6)
  */
-void somethingWithChar (char m, char n)
+void findTheLastChar(char m, char n)
 { 
     ignoreUnused(m, n); 
    
@@ -164,7 +164,7 @@ int sum(int number, int size)
 /*
  9)
  */
-double beforeTheLastOne(float weight, float price)
+double findTheLastBeforeTheLastOne(float weight, float price)
 { 
     ignoreUnused(weight, price); 
     return {}; 
@@ -172,7 +172,7 @@ double beforeTheLastOne(float weight, float price)
 /*
  10)
  */
-bool theLastOne (int weight, bool isDead)
+bool findTheLastOne (int weight, bool isDead)
 { 
     ignoreUnused(weight, isDead); 
     return {}; 
@@ -196,27 +196,27 @@ int main()
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
     //1)
-    auto tbd = timeBeforeDeath (50, 0);
+    auto tbd = calculateTimeBeforeDeath (50, 0);
 
     //2)
  
-    auto tsb = timeSinceBirth (50, true);
+    auto tsb =calculateTimeSinceBirth (50, true);
 
     //3)
  
-    howWon(true, 4.5f);
+    payToWon(true, 4.5f);
 
     //4)
 
-    auto vol = volume (6.0f, 7.0f);
+    auto vol = calculateVolume (6.0f, 7.0f);
 
     //5)
 
-    toHardtoFindVirtualIdeas(7.5, 8.2);
+    executeTheTask(7.5, 8.2);
 
     //6)
 
-    somethingWithChar ('r','t');
+    findTheLastChar('r','t');
 
     //7)
     mixThings (5.0, '8', 4);
@@ -227,11 +227,11 @@ int main()
 
     //9)
 
-    auto dtlo = beforeTheLastOne(3.2f, 3.3f);
+    auto dtlo = findTheLastBeforeTheLastOne(3.2f, 3.3f);
 
     //10)
  
-    auto tlo = theLastOne (8, false);
+    auto tlo = findTheLastOne(8, false);
 
  
     

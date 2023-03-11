@@ -15,9 +15,12 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
+ bool
+int
+float
+double
+char
+void
  
  
  
@@ -64,10 +67,23 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    int age = 5;
+    int size = 6;
+    bool isDead = true;
+    bool isAlive = false;
+    bool hasWonTheWorldCup = true;
+    float weight = 4.0f;
+    float  height = 5.0f;
+    float price = 6.0f;
+    double noIdea = 7.0;
+    double whatever = 8.0;
+    double somethingElse = 9.0;
+    char m = 'm';
+    char n = 'n';
+    char o = '5';
 
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number,age, size, isDead, isAlive, hasWonTheWorldCup, weight, height, price, noIdea, whatever, somethingElse, m, n, o); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -84,43 +100,83 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int calculateTimeBeforeDeath (int age, bool isDead)
+{ 
+    ignoreUnused(age, isDead); 
+    return {}; 
+} 
 /*
  2)
  */
-
+int calculateTimeSinceBirth (int age, bool isAlive)
+{ 
+    ignoreUnused(age, isAlive); 
+    return {}; 
+} 
 /*
  3)
  */
-
+void payToWon(bool hasWonTheWorldCup, float price)
+{ 
+    ignoreUnused(hasWonTheWorldCup, price); 
+   
+} 
 /*
  4)
  */
-
+float calculateVolume (float weight, float height)
+{ 
+    ignoreUnused(weight, height); 
+    return {}; 
+} 
 /*
  5)
  */
-
+void executeTheTask(double noIdea, double whatever)
+{ 
+    ignoreUnused(noIdea, whatever); 
+    
+} 
 /*
  6)
  */
-
+void findTheLastChar(char m, char n)
+{ 
+    ignoreUnused(m, n); 
+   
+} 
 /*
  7)
  */
-
+void mixThings (double somethingElse, char o, int number)
+{ 
+    ignoreUnused(somethingElse, o, number); 
+     
+} 
 /*
  8)
  */
-
+int sum(int number, int size)
+{ 
+    ignoreUnused(number, size); 
+    return {}; 
+} 
 /*
  9)
  */
-
+double findTheLastBeforeTheLastOne(float weight, float price)
+{ 
+    ignoreUnused(weight, price); 
+    return {}; 
+} 
 /*
  10)
  */
-
+bool findTheLastOne (int weight, bool isDead)
+{ 
+    ignoreUnused(weight, isDead); 
+    return {}; 
+} 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -139,29 +195,48 @@ int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
-    
     //1)
-    
+    auto tbd = calculateTimeBeforeDeath (50, 0);
+
     //2)
-    
+ 
+    auto tsb =calculateTimeSinceBirth (50, true);
+
     //3)
-    
+ 
+    payToWon(true, 4.5f);
+
     //4)
-    
+
+    auto vol = calculateVolume (6.0f, 7.0f);
+
     //5)
-    
+
+    executeTheTask(7.5, 8.2);
+
     //6)
-    
+
+    findTheLastChar('r','t');
+
     //7)
-    
+    mixThings (5.0, '8', 4);
+
     //8)
-    
+
+    auto sm = sum(3,2);
+
     //9)
-    
+
+    auto dtlo = findTheLastBeforeTheLastOne(3.2f, 3.3f);
+
     //10)
+ 
+    auto tlo = findTheLastOne(8, false);
+
+ 
     
     
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, tbd, tsb, vol, sm, dtlo, tlo);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
